@@ -49,7 +49,7 @@ namespace CLMTB.ApplicationLayer.Services.Entites
 
         public IList<Athlete> GetAll()
         {
-            throw new NotImplementedException();
+            return _athleteRepository.GetAll();
         }
     }
 }

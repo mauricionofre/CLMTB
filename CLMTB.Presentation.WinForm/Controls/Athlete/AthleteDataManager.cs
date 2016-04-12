@@ -17,7 +17,7 @@ namespace CLMTB.Presentation.WinForm.Controls.Athlete
         public AthleteDataManager()
         {
             _service = new AthleteService();
-            _control = new AthleteControl();
+            _control = new AthleteControl(_service);
         }
 
         public override void AddData()

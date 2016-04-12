@@ -9,6 +9,10 @@ namespace CLMTB.Domain.Entities
 {
     public class Athlete : Entity
     {
+        public Athlete()
+        {
+        }
+
         public Athlete(string name, DateTime birthDate, Address address)
         {
             this.Name = name;
