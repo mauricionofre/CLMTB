@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CLMTB.Domain.Entities;
+using CLMTB.Infrastructure.ORM.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -12,14 +14,14 @@ namespace CLMTB.Infrastructure.ORM.Context
     public class EntityFrameworkContext : DbContext
     {
         public EntityFrameworkContext()
-            : base("CLMTB")
+            : base("SqlServer.connection")
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<EntityFrameworkContext>());
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
         }
 
-        // public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Athlete> Athletes { get; set; }
 
         public static EntityFrameworkContext Create()
         {
@@ -30,7 +32,7 @@ namespace CLMTB.Infrastructure.ORM.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            // modelBuilder.Configurations.Add(new AlunoConfiguration());
+            modelBuilder.Configurations.Add(new AthleteConfiguration());
         }
 
         public void Detach(object entity)

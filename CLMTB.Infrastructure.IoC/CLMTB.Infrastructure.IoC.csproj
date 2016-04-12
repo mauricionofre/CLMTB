@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9536FCF0-CC23-4047-9327-90BEF079DD1B}</ProjectGuid>
+    <ProjectGuid>{449A4531-6398-4A46-8C79-DA1C245B2316}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CLMTB.Domain</RootNamespace>
-    <AssemblyName>CLMTB.Domain</AssemblyName>
+    <RootNamespace>CLMTB.Infrastructure.IoC</RootNamespace>
+    <AssemblyName>CLMTB.Infrastructure.IoC</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\CLMTB Solution\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,15 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\Entity.cs" />
-    <Compile Include="Common\IRepository.cs" />
-    <Compile Include="Contracts\IAthleteRepository.cs" />
-    <Compile Include="Entities\Address.cs" />
-    <Compile Include="Entities\Athlete.cs" />
-    <Compile Include="Entities\BloodTypeEnum.cs" />
+    <Compile Include="Injection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
