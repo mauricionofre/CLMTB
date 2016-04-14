@@ -45,6 +45,8 @@
             this.txtNeighborhood = new System.Windows.Forms.TextBox();
             this.lblNeighborhood = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbBloodGroup = new System.Windows.Forms.ComboBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.txtFone = new System.Windows.Forms.TextBox();
@@ -53,8 +55,6 @@
             this.lblRG = new System.Windows.Forms.Label();
             this.txtRG = new System.Windows.Forms.TextBox();
             this.lbltipo = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.cbBloodGroup = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvAthletes)).BeginInit();
             this.gbGridAthletes.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -129,18 +129,19 @@
             this.gvAthletes.ReadOnly = true;
             this.gvAthletes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.gvAthletes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvAthletes.Size = new System.Drawing.Size(833, 376);
+            this.gvAthletes.Size = new System.Drawing.Size(833, 174);
             this.gvAthletes.TabIndex = 7;
             this.gvAthletes.SelectionChanged += new System.EventHandler(this.gvAthletes_SelectionChanged);
             // 
             // gbGridAthletes
             // 
-            this.gbGridAthletes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbGridAthletes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbGridAthletes.Controls.Add(this.gvAthletes);
             this.gbGridAthletes.Location = new System.Drawing.Point(3, 146);
             this.gbGridAthletes.Name = "gbGridAthletes";
-            this.gbGridAthletes.Size = new System.Drawing.Size(839, 395);
+            this.gbGridAthletes.Size = new System.Drawing.Size(839, 193);
             this.gbGridAthletes.TabIndex = 8;
             this.gbGridAthletes.TabStop = false;
             this.gbGridAthletes.Text = "Atletas Cadastrados";
@@ -235,6 +236,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Novo";
             // 
+            // cbBloodGroup
+            // 
+            this.cbBloodGroup.FormattingEnabled = true;
+            this.cbBloodGroup.Location = new System.Drawing.Point(374, 45);
+            this.cbBloodGroup.Name = "cbBloodGroup";
+            this.cbBloodGroup.Size = new System.Drawing.Size(50, 21);
+            this.cbBloodGroup.TabIndex = 5;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(510, 46);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(67, 17);
+            this.radioButton2.TabIndex = 6;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Feminino";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -303,25 +323,6 @@
             this.lbltipo.TabIndex = 15;
             this.lbltipo.Text = "Tipo Sanguíneo:";
             // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(510, 46);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(67, 17);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Feminino";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // cbBloodGroup
-            // 
-            this.cbBloodGroup.FormattingEnabled = true;
-            this.cbBloodGroup.Location = new System.Drawing.Point(374, 45);
-            this.cbBloodGroup.Name = "cbBloodGroup";
-            this.cbBloodGroup.Size = new System.Drawing.Size(50, 21);
-            this.cbBloodGroup.TabIndex = 5;
-            // 
             // AthleteControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,7 +330,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbGridAthletes);
             this.Name = "AthleteControl";
-            this.Size = new System.Drawing.Size(845, 544);
+            this.Size = new System.Drawing.Size(845, 342);
             ((System.ComponentModel.ISupportInitialize)(this.gvAthletes)).EndInit();
             this.gbGridAthletes.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

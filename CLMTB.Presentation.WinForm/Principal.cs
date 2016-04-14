@@ -82,7 +82,6 @@ namespace CLMTB.Presentation.WinForm
         {
             try
             {
-                tbtNew.Image = _dataManager.IconAddData();
                 _dataManager.AddData();
             }
             catch (Exception ex)
