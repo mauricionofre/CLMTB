@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fecharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,15 +37,18 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatusMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsCommand = new System.Windows.Forms.ToolStrip();
+            this.tbtNew = new System.Windows.Forms.ToolStripButton();
+            this.tbtSave = new System.Windows.Forms.ToolStripButton();
+            this.tbtRemove = new System.Windows.Forms.ToolStripButton();
             this.btnCron = new System.Windows.Forms.ToolStripButton();
-            this.tsCommands = new System.Windows.Forms.ToolStrip();
-            this.btnSave = new System.Windows.Forms.ToolStripButton();
-            this.btnRemove = new System.Windows.Forms.ToolStripButton();
             this.btnAthletes = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.tsCommands.SuspendLayout();
+            this.tsCommand.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -85,7 +87,7 @@
             // atletaToolStripMenuItem
             // 
             this.atletaToolStripMenuItem.Name = "atletaToolStripMenuItem";
-            this.atletaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.atletaToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.atletaToolStripMenuItem.Text = "Atleta";
             this.atletaToolStripMenuItem.Click += new System.EventHandler(this.atletaToolStripMenuItem_Click);
             // 
@@ -94,9 +96,9 @@
             this.pnContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnContent.Location = new System.Drawing.Point(0, 52);
+            this.pnContent.Location = new System.Drawing.Point(0, 105);
             this.pnContent.Name = "pnContent";
-            this.pnContent.Size = new System.Drawing.Size(854, 389);
+            this.pnContent.Size = new System.Drawing.Size(854, 361);
             this.pnContent.TabIndex = 1;
             // 
             // statusStrip1
@@ -117,73 +119,105 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCron,
+            this.toolStripSeparator1,
             this.btnAthletes});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(854, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(854, 39);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // tsCommand
+            // 
+            this.tsCommand.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsCommand.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tbtNew,
+            this.toolStripSeparator2,
+            this.tbtRemove,
+            this.tbtSave});
+            this.tsCommand.Location = new System.Drawing.Point(0, 63);
+            this.tsCommand.Name = "tsCommand";
+            this.tsCommand.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tsCommand.Size = new System.Drawing.Size(854, 39);
+            this.tsCommand.TabIndex = 4;
+            this.tsCommand.Text = "tsCommand";
+            this.tsCommand.Visible = false;
+            // 
+            // tbtNew
+            // 
+            this.tbtNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbtNew.Image = global::CLMTB.Presentation.WinForm.Properties.Resources._1460612660_file_add;
+            this.tbtNew.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tbtNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtNew.Name = "tbtNew";
+            this.tbtNew.Size = new System.Drawing.Size(36, 36);
+            this.tbtNew.Text = "tbtNew";
+            this.tbtNew.Click += new System.EventHandler(this.tbtAdd_Click);
+            // 
+            // tbtSave
+            // 
+            this.tbtSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbtSave.Enabled = false;
+            this.tbtSave.Image = global::CLMTB.Presentation.WinForm.Properties.Resources._1460622284_bullet_accept;
+            this.tbtSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tbtSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtSave.Name = "tbtSave";
+            this.tbtSave.Size = new System.Drawing.Size(36, 36);
+            this.tbtSave.Text = "tbtEdit";
+            // 
+            // tbtRemove
+            // 
+            this.tbtRemove.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbtRemove.Enabled = false;
+            this.tbtRemove.Image = global::CLMTB.Presentation.WinForm.Properties.Resources._1460610202_trash_full;
+            this.tbtRemove.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tbtRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtRemove.Name = "tbtRemove";
+            this.tbtRemove.Size = new System.Drawing.Size(36, 36);
+            this.tbtRemove.Text = "toolStripButton1";
+            // 
             // btnCron
             // 
-            this.btnCron.Image = ((System.Drawing.Image)(resources.GetObject("btnCron.Image")));
+            this.btnCron.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCron.Image = global::CLMTB.Presentation.WinForm.Properties.Resources._1460610867_star_full;
+            this.btnCron.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnCron.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCron.Name = "btnCron";
-            this.btnCron.Size = new System.Drawing.Size(71, 22);
+            this.btnCron.Size = new System.Drawing.Size(36, 36);
             this.btnCron.Text = "btnCron";
-            // 
-            // tsCommands
-            // 
-            this.tsCommands.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tsCommands.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.tsCommands.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnSave,
-            this.btnRemove});
-            this.tsCommands.Location = new System.Drawing.Point(0, 444);
-            this.tsCommands.Name = "tsCommands";
-            this.tsCommands.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tsCommands.Size = new System.Drawing.Size(854, 25);
-            this.tsCommands.TabIndex = 4;
-            this.tsCommands.Text = "toolStrip2";
-            this.tsCommands.Visible = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(23, 22);
-            this.btnSave.Text = "btnSave";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnRemove.Enabled = false;
-            this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
-            this.btnRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(23, 22);
-            this.btnRemove.Text = "toolStripButton3";
+            this.btnCron.ToolTipText = "Cronometro";
             // 
             // btnAthletes
             // 
-            this.btnAthletes.Image = ((System.Drawing.Image)(resources.GetObject("btnAthletes.Image")));
+            this.btnAthletes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAthletes.Image = global::CLMTB.Presentation.WinForm.Properties.Resources._1460609586_user_add;
+            this.btnAthletes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnAthletes.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAthletes.Name = "btnAthletes";
-            this.btnAthletes.Size = new System.Drawing.Size(88, 22);
+            this.btnAthletes.Size = new System.Drawing.Size(36, 36);
             this.btnAthletes.Text = "btnAthletes";
+            this.btnAthletes.ToolTipText = "Adicionar atleta";
             this.btnAthletes.Click += new System.EventHandler(this.btnAthletes_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 491);
-            this.Controls.Add(this.tsCommands);
+            this.Controls.Add(this.tsCommand);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pnContent);
@@ -197,8 +231,8 @@
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.tsCommands.ResumeLayout(false);
-            this.tsCommands.PerformLayout();
+            this.tsCommand.ResumeLayout(false);
+            this.tsCommand.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,10 +250,13 @@
         private System.Windows.Forms.ToolStripStatusLabel lblStatusMessage;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnCron;
-        private System.Windows.Forms.ToolStrip tsCommands;
-        private System.Windows.Forms.ToolStripButton btnSave;
-        private System.Windows.Forms.ToolStripButton btnRemove;
         private System.Windows.Forms.ToolStripButton btnAthletes;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStrip tsCommand;
+        private System.Windows.Forms.ToolStripButton tbtNew;
+        private System.Windows.Forms.ToolStripButton tbtSave;
+        private System.Windows.Forms.ToolStripButton tbtRemove;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 

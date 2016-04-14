@@ -1,13 +1,10 @@
 ﻿using CLMTB.ApplicationLayer.Services.Entites;
+using CLMTB.Domain.Entities;
 using CLMTB.Presentation.WinForm.Controls.Shared;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CLMTB.Presentation.WinForm.Controls.Athlete
+namespace CLMTB.Presentation.WinForm.Controls.AthleteForm
 {
     public class AthleteDataManager : DataManager
     {
@@ -22,12 +19,14 @@ namespace CLMTB.Presentation.WinForm.Controls.Athlete
 
         public override void AddData()
         {
-            _service.Add(new Domain.Entities.Athlete("Onofre", DateTime.Now, new Domain.Entities.Address()));
+            _service.Add(new Athlete("Onofre", DateTime.Now, new Domain.Entities.Address()));
+            _control.RefreshGrid();
         }
 
         public override void DeleteData()
         {
-            throw new NotImplementedException();
+            Athlete athlete = _control.GetAthlete();
+            _service.Delete(athlete.Id);
         }
 
         public override void UpdateData()

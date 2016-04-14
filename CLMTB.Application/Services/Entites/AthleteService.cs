@@ -34,17 +34,20 @@ namespace CLMTB.ApplicationLayer.Services.Entites
 
         public void Update(Athlete obj)
         {
-            throw new NotImplementedException();
+            _athleteRepository.Update(obj);
+
+            _unitOfWork.Commit();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _athleteRepository.Delete(id);
+            _unitOfWork.Commit();
         }
 
         public Athlete GetById(int id)
         {
-            throw new NotImplementedException();
+            return _athleteRepository.GetById(id);
         }
 
         public IList<Athlete> GetAll()

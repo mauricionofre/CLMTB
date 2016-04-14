@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CLMTB.Presentation.WinForm.Properties;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,5 +26,20 @@ namespace CLMTB.Presentation.WinForm.Controls.Shared
         public abstract StateButtons GetStateButtons();
 
         public abstract bool GetVisibleCommands();
+
+        public virtual Image IconAddData()
+        {
+            return Resources._1460610221_bullet_add;
+        }
+
+        public virtual Image IconDeleteData()
+        {
+            return Resources._1460610732_bullet_delete;
+        }
+
+        public virtual Image IconUpdateData()
+        {
+            return Resources._1460610789_edit;
+        }
     }
 }

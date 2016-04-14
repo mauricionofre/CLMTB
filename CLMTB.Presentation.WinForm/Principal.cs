@@ -1,5 +1,6 @@
-﻿using CLMTB.Presentation.WinForm.Controls.Athlete;
+﻿using CLMTB.Presentation.WinForm.Controls.AthleteForm;
 using CLMTB.Presentation.WinForm.Controls.Shared;
+using CLMTB.Presentation.WinForm.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,7 @@ namespace CLMTB.Presentation.WinForm
 
                 pnContent.Controls.Add(_control);
 
-                tsCommands.Visible = _dataManager.GetVisibleCommands();
+                tsCommand.Visible = _dataManager.GetVisibleCommands();
             }
             catch (Exception e)
             {
@@ -75,6 +76,19 @@ namespace CLMTB.Presentation.WinForm
         private void btnAthletes_Click(object sender, EventArgs e)
         {
             LoadDataManager(new AthleteDataManager());
+        }
+
+        private void tbtAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tbtNew.Image = _dataManager.IconAddData();
+                _dataManager.AddData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

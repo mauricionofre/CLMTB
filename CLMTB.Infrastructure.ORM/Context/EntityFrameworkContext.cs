@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace CLMTB.Infrastructure.ORM.Context
     public class EntityFrameworkContext : DbContext
     {
         public EntityFrameworkContext()
-            : base("SqlServer.connection")
+            : base("CLMTB")
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<EntityFrameworkContext>());
             Configuration.ProxyCreationEnabled = false;
@@ -32,6 +33,7 @@ namespace CLMTB.Infrastructure.ORM.Context
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Configurations.Add(new AthleteConfiguration());
         }
 
