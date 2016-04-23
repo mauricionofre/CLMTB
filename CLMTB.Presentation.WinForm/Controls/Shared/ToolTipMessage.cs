@@ -10,15 +10,24 @@ namespace CLMTB.Presentation.WinForm.Controls.Shared
     {
         public ToolTipMessage()
         {
-            Add = " ";
-            Delete = " ";
             Edit = " ";
+            Delete = " ";
+            Add = " ";
+            Search = " ";
         }
 
-        public string Add { get; set; }
+        public string Edit { get; set; }
 
         public string Delete { get; set; }
 
-        public string Edit { get; set; }
+        public string Add { get; set; }
+
+        public string Search { get; set; }
+    }
+
+    public class SearchToolTipMessage
+    {
+        public string Options { get; set; }
+        public string Search { get; set; }
     }
 }

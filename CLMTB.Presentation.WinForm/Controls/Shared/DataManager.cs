@@ -1,8 +1,10 @@
 ﻿using CLMTB.Presentation.WinForm.Properties;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +15,7 @@ namespace CLMTB.Presentation.WinForm.Controls.Shared
     {
         public abstract void AddData();
 
-        public abstract void DeleteData();
+        public abstract void RemoveData();
 
         public abstract void UpdateData();
 
@@ -21,25 +23,32 @@ namespace CLMTB.Presentation.WinForm.Controls.Shared
 
         public abstract string GetDescription();
 
-        public abstract ToolTipMessage GetToolTipMessage();
+        public abstract List<string> GetSearchOptions();
+
+        public virtual ToolTipMessage GetToolTipMessage()
+        {
+            return new ToolTipMessage
+            {
+                Edit = "Editar",
+                Delete = "Deletar",
+                Add = "Adicionar",
+                Search = "Procurar"
+            };
+        }
 
         public abstract StateButtons GetStateButtons();
 
         public abstract bool GetVisibleCommands();
 
-        public virtual Image IconAddData()
+        public List<string> GetOptions(Type type)
         {
-            return Resources._1460610221_bullet_add;
-        }
+            var options = new List<string>();
+            List<PropertyInfo> props = type.GetProperties()
+                .Where(prop => Attribute.IsDefined(prop, typeof(DisplayNameAttribute)))
+                .ToList();
 
-        public virtual Image IconDeleteData()
-        {
-            return Resources._1460610732_bullet_delete;
-        }
-
-        public virtual Image IconUpdateData()
-        {
-            return Resources._1460610789_edit;
+            props.ForEach(x => options.Add(x.Name));
+            return options;
         }
     }
 }

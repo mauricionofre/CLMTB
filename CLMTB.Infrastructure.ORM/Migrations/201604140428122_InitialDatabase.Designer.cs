@@ -7,13 +7,13 @@ namespace CLMTB.Infrastructure.ORM.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddAdd : IMigrationMetadata
+    public sealed partial class InitialDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddAdd));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201604120329009_AddAdd"; }
+            get { return "201604140428122_InitialDatabase"; }
         }
         
         string IMigrationMetadata.Source

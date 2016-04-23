@@ -179,5 +179,15 @@ namespace CLMTB.Presentation.WinForm.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1461284429_zoom {
+            get {
+                object obj = ResourceManager.GetObject("1461284429_zoom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -115,7 +115,9 @@ namespace CLMTB.Infrastructure.ORM.Common
         public virtual IList<T> GetAll()
         {
             Thread.Sleep(1);
-            return dbset.ToList();
+            return dbset.ToList()
+                .OrderBy(x => x.Id)
+                .ToList();
         }
 
         public virtual IList<T> GetMany(Expression<Func<T, bool>> where)

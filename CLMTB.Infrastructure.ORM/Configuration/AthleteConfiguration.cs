@@ -14,6 +14,7 @@ namespace CLMTB.Infrastructure.ORM.Configuration
         {
             ToTable("Athlete");
             HasKey(a => a.Id);
+            Property(a => a.Name);
         }
     }
 }

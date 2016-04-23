@@ -1,7 +1,9 @@
-﻿using CLMTB.ApplicationLayer.Services.Entites;
+﻿using CLMTB.ApplicationLayer.DTO;
+using CLMTB.ApplicationLayer.Services.Entites;
 using CLMTB.Domain.Entities;
 using CLMTB.Presentation.WinForm.Controls.Shared;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace CLMTB.Presentation.WinForm.Controls.AthleteForm
@@ -19,19 +21,59 @@ namespace CLMTB.Presentation.WinForm.Controls.AthleteForm
 
         public override void AddData()
         {
-            _service.Add(new Athlete("Onofre", DateTime.Now, new Domain.Entities.Address()));
-            _control.RefreshGrid();
+            var dialog = new AthleteDialog();
+            dialog.Athlete = new AthleteDTO();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                _service.Add(dialog.Athlete);
+                _control.RefreshGrid();
+            }
         }
 
-        public override void DeleteData()
+        public override void RemoveData()
         {
-            Athlete athlete = _control.GetAthlete();
-            _service.Delete(athlete.Id);
+            AthleteDTO athlete = _control.GetAthlete();
+
+            if (athlete == null)
+            {
+                MessageBox.Show("Nenhum atleta selecionado. Selecionar um atleta antes de solicitar a exclusão");
+                return;
+            }
+
+            if (MessageBox.Show("Deseja remover o atleta selecionado?", "", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            {
+                try
+                {
+                    _service.Delete(athlete.Id);
+
+                    _control.RefreshGrid();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
         }
 
         public override void UpdateData()
         {
-            throw new NotImplementedException();
+            AthleteDTO athlete = _control.GetAthlete();
+
+            if (athlete == null)
+            {
+                MessageBox.Show("Nenhum atleta selecionado. Selecionar um atleta antes de solicitar a edição");
+                return;
+            }
+
+            var dialog = new AthleteDialog();
+
+            dialog.Athlete = athlete;
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                _service.Update(dialog.Athlete);
+                _control.RefreshGrid();
+            }
         }
 
         public override UserControl GetControl()
@@ -44,22 +86,39 @@ namespace CLMTB.Presentation.WinForm.Controls.AthleteForm
 
         public override string GetDescription()
         {
-            throw new NotImplementedException();
-        }
-
-        public override ToolTipMessage GetToolTipMessage()
-        {
-            throw new NotImplementedException();
+            return "Cadastro de Atleta";
         }
 
         public override StateButtons GetStateButtons()
         {
-            throw new NotImplementedException();
+            return new StateButtons
+            {
+                Edit = true,
+                Delete = true,
+                Add = true,
+                Search = false
+            };
+        }
+
+        public override ToolTipMessage GetToolTipMessage()
+        {
+            return new ToolTipMessage()
+            {
+                Add = "Adicionar Atleta",
+                Delete = "Deletar Atleta",
+                Edit = "Editar Atleta",
+                Search = "Procurar Atleta"
+            };
         }
 
         public override bool GetVisibleCommands()
         {
             return true;
+        }
+
+        public override List<string> GetSearchOptions()
+        {
+            return GetOptions(typeof(AthleteDTO));
         }
     }
 }

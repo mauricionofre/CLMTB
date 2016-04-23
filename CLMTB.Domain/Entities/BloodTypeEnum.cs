@@ -11,28 +11,28 @@ namespace CLMTB.Domain.Entities
     public enum BloodGroupEnum
     {
         [Description("O-")]
-        ONeg,
+        ONeg = 0,
 
         [Description("O+")]
-        OPos,
+        OPos = 1,
 
         [Description("A-")]
-        ANeg,
+        ANeg = 2,
 
         [Description("A+")]
-        APos,
+        APos = 3,
 
         [Description("B-")]
-        BNeg,
+        BNeg = 4,
 
         [Description("B+")]
-        BPos,
+        BPos = 5,
 
         [Description("AB-")]
-        ABNeg,
+        ABNeg = 6,
 
         [Description("AB+")]
-        ABPos
+        ABPos = 7
     }
 
     public static class EnumHelper

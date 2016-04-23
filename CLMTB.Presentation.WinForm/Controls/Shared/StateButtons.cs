@@ -8,10 +8,12 @@ namespace CLMTB.Presentation.WinForm.Controls.Shared
 {
     public class StateButtons
     {
-        public bool Add { get; set; }
+        public bool Edit { get; set; }
 
         public bool Delete { get; set; }
 
-        public bool Update { get; set; }
+        public bool Add { get; set; }
+
+        public bool Search { get; set; }
     }
 }

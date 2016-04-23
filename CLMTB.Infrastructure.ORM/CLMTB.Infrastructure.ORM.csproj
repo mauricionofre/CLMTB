@@ -66,17 +66,13 @@
     <Compile Include="Configuration\AddressConfiguration.cs" />
     <Compile Include="Configuration\AthleteConfiguration.cs" />
     <Compile Include="Context\EntityFrameworkContext.cs" />
-    <Compile Include="Migrations\201604120326156_AddTable.cs" />
-    <Compile Include="Migrations\201604120326156_AddTable.Designer.cs">
-      <DependentUpon>201604120326156_AddTable.cs</DependentUpon>
+    <Compile Include="Migrations\201604140428122_InitialDatabase.cs" />
+    <Compile Include="Migrations\201604140428122_InitialDatabase.Designer.cs">
+      <DependentUpon>201604140428122_InitialDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604120329009_AddAdd.cs" />
-    <Compile Include="Migrations\201604120329009_AddAdd.Designer.cs">
-      <DependentUpon>201604120329009_AddAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604120334306_AddCorre.cs" />
-    <Compile Include="Migrations\201604120334306_AddCorre.Designer.cs">
-      <DependentUpon>201604120334306_AddCorre.cs</DependentUpon>
+    <Compile Include="Migrations\201604190150009_changeAddressNumber.cs" />
+    <Compile Include="Migrations\201604190150009_changeAddressNumber.Designer.cs">
+      <DependentUpon>201604190150009_changeAddressNumber.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modules\EntityFrameworkNinjectModule.cs" />
@@ -98,22 +94,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604120326156_AddTable.resx">
-      <DependentUpon>201604120326156_AddTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604120329009_AddAdd.resx">
-      <DependentUpon>201604120329009_AddAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604120334306_AddCorre.resx">
-      <DependentUpon>201604120334306_AddCorre.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="CLMTB.sqlite">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -121,6 +103,14 @@
     <Content Include="CLMTB.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201604140428122_InitialDatabase.resx">
+      <DependentUpon>201604140428122_InitialDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604190150009_changeAddressNumber.resx">
+      <DependentUpon>201604190150009_changeAddressNumber.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

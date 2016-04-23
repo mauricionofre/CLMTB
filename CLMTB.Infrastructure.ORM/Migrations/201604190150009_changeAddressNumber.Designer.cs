@@ -7,13 +7,13 @@ namespace CLMTB.Infrastructure.ORM.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddCorre : IMigrationMetadata
+    public sealed partial class changeAddressNumber : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddCorre));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(changeAddressNumber));
         
         string IMigrationMetadata.Id
         {
-            get { return "201604120334306_AddCorre"; }
+            get { return "201604190150009_changeAddressNumber"; }
         }
         
         string IMigrationMetadata.Source

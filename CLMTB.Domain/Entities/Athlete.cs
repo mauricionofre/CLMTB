@@ -11,21 +11,26 @@ namespace CLMTB.Domain.Entities
     {
         public Athlete()
         {
+            BloodType = BloodGroupEnum.ONeg;
         }
 
-        public Athlete(string name, DateTime birthDate, Address address)
+        public Athlete(string name, DateTime birthDate, string cpf)
+            : this()
         {
             this.Name = name;
             this.BirthDate = birthDate;
-            this.Address = address;
+            this.CPF = cpf;
         }
 
         public string Name { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
         public DateTime BirthDate { get; set; }
-        public string BloodType { get; set; }
+        public BloodGroupEnum BloodType { get; set; }
+        public string Email { get; set; }
         public string Fone { get; set; }
+
+        public string Gender { get; set; }
 
         public Address Address { get; set; }
     }
