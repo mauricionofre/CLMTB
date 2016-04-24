@@ -23,7 +23,10 @@ namespace CLMTB.Presentation.WinForm.Controls.Shared
 
         public abstract string GetDescription();
 
-        public abstract List<string> GetSearchOptions();
+        public virtual List<string> GetSearchOptions()
+        {
+            return null;
+        }
 
         public virtual ToolTipMessage GetToolTipMessage()
         {

@@ -40,6 +40,7 @@
             this.btnCron = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAthletes = new System.Windows.Forms.ToolStripButton();
+            this.btnCategory = new System.Windows.Forms.ToolStripButton();
             this.tsCommand = new System.Windows.Forms.ToolStrip();
             this.tbtAdd = new System.Windows.Forms.ToolStripButton();
             this.tbtEdit = new System.Windows.Forms.ToolStripButton();
@@ -127,7 +128,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCron,
             this.toolStripSeparator1,
-            this.btnAthletes});
+            this.btnAthletes,
+            this.btnCategory});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1038, 39);
@@ -161,6 +163,18 @@
             this.btnAthletes.Text = "btnAthletes";
             this.btnAthletes.ToolTipText = "Adicionar atleta";
             this.btnAthletes.Click += new System.EventHandler(this.btnAthletes_Click);
+            // 
+            // btnCategory
+            // 
+            this.btnCategory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCategory.Image = global::CLMTB.Presentation.WinForm.Properties.Resources.tag_add;
+            this.btnCategory.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnCategory.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCategory.Name = "btnCategory";
+            this.btnCategory.Size = new System.Drawing.Size(36, 36);
+            this.btnCategory.Text = "btnCategory";
+            this.btnCategory.ToolTipText = "Adicionar Categoria";
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
             // tsCommand
             // 
@@ -300,6 +314,7 @@
         private System.Windows.Forms.ToolStripComboBox tscSearchBy;
         private System.Windows.Forms.ToolStripTextBox tstSearch;
         private System.Windows.Forms.ToolStripButton tsbSearch;
+        private System.Windows.Forms.ToolStripButton btnCategory;
     }
 }
 

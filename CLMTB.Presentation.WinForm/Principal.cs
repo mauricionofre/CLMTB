@@ -1,4 +1,5 @@
 ﻿using CLMTB.Presentation.WinForm.Controls.AthleteForm;
+using CLMTB.Presentation.WinForm.Controls.CategoryForm;
 using CLMTB.Presentation.WinForm.Controls.Shared;
 using CLMTB.Presentation.WinForm.Properties;
 using System;
@@ -57,7 +58,8 @@ namespace CLMTB.Presentation.WinForm
                 tbtRemove.Enabled = dataManager.GetStateButtons().Delete;
                 tbtAdd.Enabled = dataManager.GetStateButtons().Add;
 
-                tscSearchBy.Items.AddRange(dataManager.GetSearchOptions().ToArray());
+                if (dataManager.GetSearchOptions() != null)
+                    tscSearchBy.Items.AddRange(dataManager.GetSearchOptions().ToArray());
 
                 SetToolStripSearch(dataManager.GetStateButtons().Search);
 
@@ -145,6 +147,11 @@ namespace CLMTB.Presentation.WinForm
             {
                 ShowErrorMessage(ex.Message);
             }
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            LoadDataManager(new CategoryDataManager());
         }
     }
 }

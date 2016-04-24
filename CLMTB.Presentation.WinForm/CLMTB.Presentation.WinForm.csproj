@@ -72,6 +72,13 @@
     <Compile Include="Controls\AthleteForm\AthleteDialog.Designer.cs">
       <DependentUpon>AthleteDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CategoryForm\CategoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CategoryForm\CategoryControl.Designer.cs">
+      <DependentUpon>CategoryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CategoryForm\CategoryDataManager.cs" />
     <Compile Include="Controls\Shared\DataManager.cs" />
     <Compile Include="Controls\Shared\StateButtons.cs" />
     <Compile Include="Controls\Shared\ToolTipMessage.cs" />
@@ -89,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\AthleteForm\AthleteDialog.resx">
       <DependentUpon>AthleteDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CategoryForm\CategoryControl.resx">
+      <DependentUpon>CategoryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -169,6 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1461284429_zoom.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag_add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
