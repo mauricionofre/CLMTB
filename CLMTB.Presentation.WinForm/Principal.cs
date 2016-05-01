@@ -29,6 +29,11 @@ namespace CLMTB.Presentation.WinForm
             LoadDataManager(new AthleteDataManager());
         }
 
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadDataManager(new CategoryDataManager());
+        }
+
         private void LoadDataManager(DataManager dataManager)
         {
             try
@@ -96,11 +101,6 @@ namespace CLMTB.Presentation.WinForm
             MessageBox.Show(message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void btnAthletes_Click(object sender, EventArgs e)
-        {
-            LoadDataManager(new AthleteDataManager());
-        }
-
         private void tbtAdd_Click(object sender, EventArgs e)
         {
             try
@@ -147,6 +147,11 @@ namespace CLMTB.Presentation.WinForm
             {
                 ShowErrorMessage(ex.Message);
             }
+        }
+
+        private void btnAthletes_Click(object sender, EventArgs e)
+        {
+            LoadDataManager(new AthleteDataManager());
         }
 
         private void btnCategory_Click(object sender, EventArgs e)

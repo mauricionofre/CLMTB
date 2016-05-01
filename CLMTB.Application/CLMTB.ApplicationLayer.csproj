@@ -44,9 +44,13 @@
   <ItemGroup>
     <Compile Include="DTO\AthleteDTO.cs" />
     <Compile Include="DTO\CategoryDTO.cs" />
+    <Compile Include="DTO\EventDTO.cs" />
+    <Compile Include="DTO\StageDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Entites\AthleteService.cs" />
     <Compile Include="Services\Entites\CategoryService.cs" />
+    <Compile Include="Services\Entites\StageService.cs" />
+    <Compile Include="Services\Entites\EventService.cs" />
     <Compile Include="Services\Entites\IService.cs" />
   </ItemGroup>
   <ItemGroup>

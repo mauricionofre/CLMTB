@@ -20,6 +20,9 @@ namespace CLMTB.Infrastructure.ORM.Modules
 
             Bind<IUnitOfWork>().To<EntityFrameworkUnitOfWork>().WithConstructorArgument(type, entityFrameworkFactory);
             Bind<IAthleteRepository>().To<AthleteRepository>().WithConstructorArgument(type, entityFrameworkFactory);
+            Bind<ICategoryRepository>().To<CategoryRepository>().WithConstructorArgument(type, entityFrameworkFactory);
+            Bind<IEventRepository>().To<EventRepository>().WithConstructorArgument(type, entityFrameworkFactory);
+            Bind<IStageRepository>().To<StageRepository>().WithConstructorArgument(type, entityFrameworkFactory);
         }
     }
 }

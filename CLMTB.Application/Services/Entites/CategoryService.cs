@@ -1,4 +1,8 @@
 ﻿using CLMTB.ApplicationLayer.DTO;
+using CLMTB.Domain.Contracts;
+using CLMTB.Domain.Entities;
+using CLMTB.Infrastructure.DAO.Common.Uow;
+using CLMTB.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,29 +17,58 @@ namespace CLMTB.ApplicationLayer.Services.Entites
 
     public class CategoryService : ICategoryService
     {
-        public void Add(CategoryDTO obj)
+        private ICategoryRepository _categoryRepository;
+        private IUnitOfWork _unitOfWork;
+
+        public CategoryService()
         {
-            throw new NotImplementedException();
+            _unitOfWork = Injection.Get<IUnitOfWork>();
+            _categoryRepository = Injection.Get<ICategoryRepository>();
         }
 
-        public void Update(CategoryDTO obj)
+        public void Add(CategoryDTO category)
         {
-            throw new NotImplementedException();
+            Category cat = new Category();
+            cat.Name = category.Name;
+            cat.Description = category.Description;
+            cat.Type = category.Type;
+
+            _categoryRepository.Add(cat);
+
+            _unitOfWork.Commit();
+        }
+
+        public void Update(CategoryDTO category)
+        {
+            Category cat = _categoryRepository.GetById(category.Id);
+
+            cat.Name = category.Name;
+            cat.Description = category.Description;
+            cat.Type = category.Type;
+
+            _categoryRepository.Update(cat);
+
+            _unitOfWork.Commit();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _categoryRepository.Delete(id);
+            _unitOfWork.Commit();
         }
 
         public CategoryDTO GetById(int id)
         {
-            throw new NotImplementedException();
+            var cat = _categoryRepository.GetById(id);
+            return new CategoryDTO(cat);
         }
 
         public IList<CategoryDTO> GetAll()
         {
-            throw new NotImplementedException();
+            return _categoryRepository
+                   .GetAll()
+                   .Select(c => new CategoryDTO(c))
+                   .ToList();
         }
     }
 }

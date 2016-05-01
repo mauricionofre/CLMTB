@@ -42,9 +42,15 @@
     <Compile Include="Common\Entity.cs" />
     <Compile Include="Common\IRepository.cs" />
     <Compile Include="Contracts\IAthleteRepository.cs" />
+    <Compile Include="Contracts\ICategoryRepository.cs" />
+    <Compile Include="Contracts\IEventRepository.cs" />
+    <Compile Include="Contracts\IStageRepository.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Athlete.cs" />
     <Compile Include="Entities\BloodTypeEnum.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Event.cs" />
+    <Compile Include="Entities\Stage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

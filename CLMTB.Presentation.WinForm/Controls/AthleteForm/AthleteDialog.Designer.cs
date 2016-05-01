@@ -331,6 +331,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(391, 283);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
@@ -411,6 +412,8 @@
             this.Controls.Add(this.lblAge);
             this.Controls.Add(this.lblIdentifier);
             this.Controls.Add(this.txtName);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AthleteDialog";
             this.Text = "AthleteDialog";
             this.groupBox1.ResumeLayout(false);

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.gbCategory = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gvCategories = new System.Windows.Forms.DataGridView();
             this.gbCategory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCategories)).BeginInit();
             this.SuspendLayout();
             // 
             // gbCategory
@@ -39,7 +39,7 @@
             this.gbCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbCategory.Controls.Add(this.dataGridView1);
+            this.gbCategory.Controls.Add(this.gvCategories);
             this.gbCategory.Location = new System.Drawing.Point(3, 3);
             this.gbCategory.Name = "gbCategory";
             this.gbCategory.Size = new System.Drawing.Size(839, 514);
@@ -47,17 +47,20 @@
             this.gbCategory.TabStop = false;
             this.gbCategory.Text = "Categorias Cadastradas";
             // 
-            // dataGridView1
+            // gvCategories
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(833, 495);
-            this.dataGridView1.TabIndex = 0;
+            this.gvCategories.AllowUserToAddRows = false;
+            this.gvCategories.AllowUserToDeleteRows = false;
+            this.gvCategories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvCategories.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvCategories.Location = new System.Drawing.Point(3, 16);
+            this.gvCategories.Name = "gvCategories";
+            this.gvCategories.ReadOnly = true;
+            this.gvCategories.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.gvCategories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvCategories.Size = new System.Drawing.Size(833, 495);
+            this.gvCategories.TabIndex = 0;
             // 
             // CategoryControl
             // 
@@ -67,7 +70,7 @@
             this.Name = "CategoryControl";
             this.Size = new System.Drawing.Size(845, 520);
             this.gbCategory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCategories)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -75,6 +78,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbCategory;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gvCategories;
     }
 }

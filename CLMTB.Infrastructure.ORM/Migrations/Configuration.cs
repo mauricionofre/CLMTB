@@ -1,11 +1,13 @@
 namespace CLMTB.Infrastructure.ORM.Migrations
 {
+    using CLMTB.Domain.Entities;
+    using CLMTB.Infrastructure.ORM.Context;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<CLMTB.Infrastructure.ORM.Context.EntityFrameworkContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<EntityFrameworkContext>
     {
         public Configuration()
         {
@@ -13,7 +15,7 @@ namespace CLMTB.Infrastructure.ORM.Migrations
             //AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(CLMTB.Infrastructure.ORM.Context.EntityFrameworkContext context)
+        protected override void Seed(EntityFrameworkContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -27,6 +29,11 @@ namespace CLMTB.Infrastructure.ORM.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.Categories.AddOrUpdate(
+                new Category { Name = "Citadino", Description = "Citadino", Type = CategoryTypeEnum.Townsman },
+                new Category { Name = "Elite", Description = "Categoria Elite", Type = CategoryTypeEnum.Independent }
+                );
         }
     }
 }

@@ -33,10 +33,11 @@
             this.fecharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.atletaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnContent = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatusMessage = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsOptions = new System.Windows.Forms.ToolStrip();
             this.btnCron = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAthletes = new System.Windows.Forms.ToolStripButton();
@@ -52,7 +53,7 @@
             this.tslSearchBy = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.tsOptions.SuspendLayout();
             this.tsCommand.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +85,8 @@
             // cadastroToolStripMenuItem1
             // 
             this.cadastroToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.atletaToolStripMenuItem});
+            this.atletaToolStripMenuItem,
+            this.categoriaToolStripMenuItem});
             this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
             this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(66, 20);
             this.cadastroToolStripMenuItem1.Text = "Cadastro";
@@ -92,9 +94,16 @@
             // atletaToolStripMenuItem
             // 
             this.atletaToolStripMenuItem.Name = "atletaToolStripMenuItem";
-            this.atletaToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.atletaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.atletaToolStripMenuItem.Text = "Atleta";
             this.atletaToolStripMenuItem.Click += new System.EventHandler(this.atletaToolStripMenuItem_Click);
+            // 
+            // categoriaToolStripMenuItem
+            // 
+            this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
+            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.categoriaToolStripMenuItem.Text = "Categoria";
+            this.categoriaToolStripMenuItem.Click += new System.EventHandler(this.categoriaToolStripMenuItem_Click);
             // 
             // pnContent
             // 
@@ -122,19 +131,19 @@
             this.lblStatusMessage.Size = new System.Drawing.Size(53, 17);
             this.lblStatusMessage.Text = "message";
             // 
-            // toolStrip1
+            // tsOptions
             // 
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsOptions.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCron,
             this.toolStripSeparator1,
             this.btnAthletes,
             this.btnCategory});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1038, 39);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "toolStrip1";
+            this.tsOptions.Location = new System.Drawing.Point(0, 24);
+            this.tsOptions.Name = "tsOptions";
+            this.tsOptions.Size = new System.Drawing.Size(1038, 39);
+            this.tsOptions.TabIndex = 3;
+            this.tsOptions.Text = "toolStrip1";
             // 
             // btnCron
             // 
@@ -226,7 +235,7 @@
             // tbtRemove
             // 
             this.tbtRemove.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbtRemove.Image = global::CLMTB.Presentation.WinForm.Properties.Resources._1460610732_bullet_delete;
+            this.tbtRemove.Image = global::CLMTB.Presentation.WinForm.Properties.Resources._1460610202_trash_full;
             this.tbtRemove.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tbtRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtRemove.Name = "tbtRemove";
@@ -271,7 +280,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 571);
             this.Controls.Add(this.tsCommand);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.tsOptions);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pnContent);
             this.Controls.Add(this.menuStrip1);
@@ -282,8 +291,8 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.tsOptions.ResumeLayout(false);
+            this.tsOptions.PerformLayout();
             this.tsCommand.ResumeLayout(false);
             this.tsCommand.PerformLayout();
             this.ResumeLayout(false);
@@ -301,7 +310,7 @@
         private System.Windows.Forms.Panel pnContent;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblStatusMessage;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip tsOptions;
         private System.Windows.Forms.ToolStripButton btnCron;
         private System.Windows.Forms.ToolStripButton btnAthletes;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -315,6 +324,7 @@
         private System.Windows.Forms.ToolStripTextBox tstSearch;
         private System.Windows.Forms.ToolStripButton tsbSearch;
         private System.Windows.Forms.ToolStripButton btnCategory;
+        private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
     }
 }
 

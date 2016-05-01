@@ -89,11 +89,6 @@ namespace CLMTB.Presentation.WinForm.Controls.AthleteForm
             Athlete.State = txtState.Text;
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void txtBirthDate_Validating(object sender, CancelEventArgs e)
         {
             DateTime dt;
@@ -105,6 +100,11 @@ namespace CLMTB.Presentation.WinForm.Controls.AthleteForm
         private void txtBirthDate_Enter(object sender, EventArgs e)
         {
             txtBirthDate.SelectAll();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
