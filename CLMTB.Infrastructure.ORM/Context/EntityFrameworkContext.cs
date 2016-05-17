@@ -24,6 +24,8 @@ namespace CLMTB.Infrastructure.ORM.Context
 
         public DbSet<Athlete> Athletes { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Stage> Stages { get; set; }
+        public DbSet<Event> Events { get; set; }
 
         public static EntityFrameworkContext Create()
         {
@@ -37,6 +39,8 @@ namespace CLMTB.Infrastructure.ORM.Context
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Configurations.Add(new AthleteConfiguration());
             modelBuilder.Configurations.Add(new CategoryConfiguration());
+            modelBuilder.Configurations.Add(new StageConfiguration());
+            modelBuilder.Configurations.Add(new EventConfiguration());
         }
 
         public void Detach(object entity)

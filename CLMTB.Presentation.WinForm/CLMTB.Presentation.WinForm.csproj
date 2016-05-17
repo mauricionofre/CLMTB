@@ -95,6 +95,19 @@
     <Compile Include="Controls\Shared\DataManager.cs" />
     <Compile Include="Controls\Shared\StateButtons.cs" />
     <Compile Include="Controls\Shared\ToolTipMessage.cs" />
+    <Compile Include="Controls\StageForm\StageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StageForm\StageControl.Designer.cs">
+      <DependentUpon>StageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StageForm\StageDataManager.cs" />
+    <Compile Include="Controls\StageForm\StageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\StageForm\StageDialog.Designer.cs">
+      <DependentUpon>StageDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Extensions\MaskedTextBoxExtension.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -118,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\EventForm\EventControl.resx">
       <DependentUpon>EventControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StageForm\StageControl.resx">
+      <DependentUpon>StageControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -214,7 +230,9 @@
   <ItemGroup>
     <None Include="Resources\1461735033_tag_add1.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\1463551502_date_add.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

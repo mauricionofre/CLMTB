@@ -8,45 +8,45 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CLMTB.Presentation.WinForm.Controls.CategoryForm
+namespace CLMTB.Presentation.WinForm.Controls.StageForm
 {
-    public class CategoryDataManager : DataManager
+    public class StageDataManager : DataManager
     {
-        private CategoryControl _control;
-        private CategoryService _service;
+        private StageService _service;
+        private StageControl _control;
 
-        public CategoryDataManager()
+        public StageDataManager()
         {
-            _service = new CategoryService();
-            _control = new CategoryControl(_service);
+            _service = new StageService();
+            _control = new StageControl(_service);
         }
 
         public override void AddData()
         {
-            var dialog = new CategoryDialog();
-            dialog.Category = new CategoryDTO();
+            var dialog = new StageDialog();
+            dialog.Stage = new StageDTO();
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                _service.Add(dialog.Category);
+                _service.Add(dialog.Stage);
                 _control.RefreshGrid();
             }
         }
 
         public override void RemoveData()
         {
-            CategoryDTO category = _control.GetCategory();
+            StageDTO stage = _control.GetStage();
 
-            if (category == null)
+            if (stage == null)
             {
-                MessageBox.Show("Nenhuma Categoria selecionada. Selecionar uma Categoria antes de solicitar a exclusão");
+                MessageBox.Show("Nenhuma Etapa selecionada. Selecionar uma Etapa antes de solicitar a exclusão");
                 return;
             }
 
-            if (MessageBox.Show("Deseja remover a Categoria selecionada?", "", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja remover a Etapa selecionada?", "", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
                 try
                 {
-                    _service.Delete(category.Id);
+                    _service.Delete(stage.Id);
 
                     _control.RefreshGrid();
                 }
@@ -59,21 +59,21 @@ namespace CLMTB.Presentation.WinForm.Controls.CategoryForm
 
         public override void UpdateData()
         {
-            CategoryDTO category = _control.GetCategory();
+            StageDTO stage = _control.GetStage();
 
-            if (category == null)
+            if (stage == null)
             {
-                MessageBox.Show("Nenhuma Categoria selecionado. Selecionar uma Categoria antes de solicitar a edição");
+                MessageBox.Show("Nenhuma Etapa selecionada. Selecionar uma Etapa antes de solicitar a edição");
                 return;
             }
 
-            var dialog = new CategoryDialog();
+            var dialog = new StageDialog();
 
-            dialog.Category = category;
+            dialog.Stage = stage;
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                _service.Update(dialog.Category);
+                _service.Update(dialog.Stage);
                 _control.RefreshGrid();
             }
         }
@@ -88,7 +88,7 @@ namespace CLMTB.Presentation.WinForm.Controls.CategoryForm
 
         public override string GetDescription()
         {
-            return "Cadastro de Categoria";
+            return "Cadastro de Etapas";
         }
 
         public override StateButtons GetStateButtons()

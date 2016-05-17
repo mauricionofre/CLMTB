@@ -1,6 +1,7 @@
 ﻿using CLMTB.Presentation.WinForm.Controls.AthleteForm;
 using CLMTB.Presentation.WinForm.Controls.CategoryForm;
 using CLMTB.Presentation.WinForm.Controls.Shared;
+using CLMTB.Presentation.WinForm.Controls.StageForm;
 using CLMTB.Presentation.WinForm.Properties;
 using System;
 using System.Collections.Generic;
@@ -157,6 +158,11 @@ namespace CLMTB.Presentation.WinForm
         private void btnCategory_Click(object sender, EventArgs e)
         {
             LoadDataManager(new CategoryDataManager());
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            LoadDataManager(new StageDataManager());
         }
     }
 }

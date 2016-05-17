@@ -1,5 +1,6 @@
 ﻿using CLMTB.ApplicationLayer.DTO;
 using CLMTB.Domain.Contracts;
+using CLMTB.Domain.Entities;
 using CLMTB.Infrastructure.DAO.Common.Uow;
 using CLMTB.Infrastructure.IoC;
 using System;
@@ -27,27 +28,60 @@ namespace CLMTB.ApplicationLayer.Services.Entites
 
         public void Add(EventDTO obj)
         {
-            throw new NotImplementedException();
+            var evt = new Event();
+
+            evt.Id = obj.Id;
+            evt.Name = obj.Name;
+            evt.InitialDate = obj.InitialDate;
+            evt.FinalDate = obj.FinalDate;
+            evt.City = obj.City;
+            evt.State = obj.State;
+
+            evt.Promotion = obj.Promotion;
+
+            evt.Categories = obj.Categories;
+            evt.Stages = obj.Stages;
+
+            _eventRepository.Add(evt);
+            _unitOfWork.Commit();
         }
 
         public void Update(EventDTO obj)
         {
-            throw new NotImplementedException();
+            var evt = _eventRepository.GetById(obj.Id);
+            evt.Name = obj.Name;
+            evt.InitialDate = obj.InitialDate;
+            evt.FinalDate = obj.FinalDate;
+            evt.City = obj.City;
+            evt.State = obj.State;
+
+            evt.Promotion = obj.Promotion;
+
+            evt.Categories = obj.Categories;
+            evt.Stages = obj.Stages;
+
+            _eventRepository.Update(evt);
+            _unitOfWork.Commit();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _eventRepository.Delete(id);
+            _unitOfWork.Commit();
         }
 
         public EventDTO GetById(int id)
         {
-            throw new NotImplementedException();
+            var evt = _eventRepository.GetById(id);
+            return new EventDTO(evt);
         }
 
         public IList<EventDTO> GetAll()
         {
-            throw new NotImplementedException();
+            return _eventRepository
+                .GetAll()
+                .Select(e => new EventDTO(e))
+                .ToList();
         }
     }
 }

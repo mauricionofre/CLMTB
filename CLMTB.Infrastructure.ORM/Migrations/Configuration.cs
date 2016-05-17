@@ -30,10 +30,10 @@ namespace CLMTB.Infrastructure.ORM.Migrations
             //    );
             //
 
-            context.Categories.AddOrUpdate(
-                new Category { Name = "Citadino", Description = "Citadino", Type = CategoryTypeEnum.Townsman },
-                new Category { Name = "Elite", Description = "Categoria Elite", Type = CategoryTypeEnum.Independent }
-                );
+            //context.Categories.AddOrUpdate(
+            //    new Category { Name = "Citadino", Description = "Citadino", Type = CategoryTypeEnum.Townsman },
+            //    new Category { Name = "Elite", Description = "Categoria Elite", Type = CategoryTypeEnum.Independent }
+            //    );
         }
     }
 }

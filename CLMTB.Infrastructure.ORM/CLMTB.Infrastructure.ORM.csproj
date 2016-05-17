@@ -81,6 +81,10 @@
     <Compile Include="Migrations\201604241932216_AddCategory.Designer.cs">
       <DependentUpon>201604241932216_AddCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605162307336_Event.cs" />
+    <Compile Include="Migrations\201605162307336_Event.Designer.cs">
+      <DependentUpon>201605162307336_Event.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modules\EntityFrameworkNinjectModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604241932216_AddCategory.resx">
       <DependentUpon>201604241932216_AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605162307336_Event.resx">
+      <DependentUpon>201605162307336_Event.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
