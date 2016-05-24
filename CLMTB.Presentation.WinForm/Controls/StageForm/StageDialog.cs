@@ -17,8 +17,39 @@ namespace CLMTB.Presentation.WinForm.Controls.StageForm
         public StageDialog()
         {
             InitializeComponent();
+
+            cbStageType.DataSource = EnumHelper.GetEnumDescriptions(typeof(StageTypeEnum));
         }
 
-        public StageDTO Stage { get; set; }
+        private StageDTO _stage;
+
+        public StageDTO Stage
+        {
+            get { return _stage; }
+            set
+            {
+                _stage = value;
+
+                txtId.Text = _stage.Id.ToString();
+                txtName.Text = _stage.Name;
+                txtSequential.Text = _stage.Sequential.ToString();
+                cbStageType.SelectedItem = EnumHelper.GetEnumDescription(_stage.StageType);
+                dpInitialDate.Value = _stage.InitialDate;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Stage.Id = Convert.ToInt32(txtId.Text);
+            Stage.Name = txtName.Text;
+            Stage.Sequential = Convert.ToInt32(txtSequential.Text);
+            Stage.StageType = EnumHelper.GetEnumFromDescription<StageTypeEnum>(cbStageType.SelectedItem.ToString());
+            Stage.InitialDate = dpInitialDate.Value;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

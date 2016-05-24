@@ -11,6 +11,7 @@ namespace CLMTB.ApplicationLayer.DTO
     {
         public StageDTO()
         {
+            InitialDate = DateTime.Now;
         }
 
         public StageDTO(Stage stage)

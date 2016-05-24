@@ -135,6 +135,9 @@
     <EmbeddedResource Include="Controls\StageForm\StageControl.resx">
       <DependentUpon>StageControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StageForm\StageDialog.resx">
+      <DependentUpon>StageDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>

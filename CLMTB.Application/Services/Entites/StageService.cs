@@ -26,6 +26,10 @@ namespace CLMTB.ApplicationLayer.Services.Entites
             _stageRepository = Injection.Get<IStageRepository>();
         }
 
+        /// <summary>
+        /// FinalDate equals InitialDate
+        /// </summary>
+        /// <param name="obj"></param>
         public void Add(StageDTO obj)
         {
             Stage stage = new Stage();
@@ -34,7 +38,7 @@ namespace CLMTB.ApplicationLayer.Services.Entites
             stage.Name = obj.Name;
             stage.Sequential = obj.Sequential;
             stage.InitialDate = obj.InitialDate;
-            stage.FinalDate = obj.FinalDate;
+            stage.FinalDate = obj.InitialDate;
             stage.GpxFile = obj.GpxFile;
             stage.StageType = obj.StageType;
 
@@ -42,6 +46,10 @@ namespace CLMTB.ApplicationLayer.Services.Entites
             _unitOfWork.Commit();
         }
 
+        /// <summary>
+        /// FinalDate equals InitialDate
+        /// </summary>
+        /// <param name="obj"></param>
         public void Update(StageDTO obj)
         {
             var stage = _stageRepository.GetById(obj.Id);
@@ -49,7 +57,7 @@ namespace CLMTB.ApplicationLayer.Services.Entites
             stage.Name = obj.Name;
             stage.Sequential = obj.Sequential;
             stage.InitialDate = obj.InitialDate;
-            stage.FinalDate = obj.FinalDate;
+            stage.FinalDate = obj.InitialDate;
             stage.GpxFile = obj.GpxFile;
             stage.StageType = obj.StageType;
 

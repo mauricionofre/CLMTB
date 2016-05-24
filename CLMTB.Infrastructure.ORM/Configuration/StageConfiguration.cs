@@ -16,6 +16,8 @@ namespace CLMTB.Infrastructure.ORM.Configuration
             HasKey(s => s.Id);
 
             Property(s => s.Name);
+            //Property(d => d.InitialDate).HasColumnType("datetime2");
+            //Property(d => d.FinalDate).HasColumnType("datetime2");
         }
     }
 }
